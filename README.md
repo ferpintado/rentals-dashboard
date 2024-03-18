@@ -1,6 +1,6 @@
 Rentals analysis dashboard
 
-**Tech stack:** Next.js, Prisma, SQLlite, shadcn, tailwind, recharts.
+**Tech stack:** Next.js, React-query, Prisma, SQLlite, shadcn, tailwind, recharts.
 
 ## Instructions
 
