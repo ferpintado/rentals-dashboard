@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "tsx seed.ts"
+    "migrate": "prisma migrate dev",
+    "seed": "tsx seed.ts",
+    "postinstall": "npm run migrate && npm run seed"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0",
