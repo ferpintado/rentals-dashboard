@@ -5,16 +5,7 @@ import dayjs from "dayjs";
 import { useContext } from "react";
 import { useQuery } from "react-query";
 import ActivityTable from "./reports/activity-table";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import SuggestedGraph from "./reports/suggested-graph";
 
 export default function MainContent() {
   const { activeTask } = useContext(AppContext);
@@ -27,11 +18,6 @@ export default function MainContent() {
       enabled: !!activeTask,
     }
   );
-
-  const chartData = data?.map((report: any) => ({
-    date: dayjs(report.date).format("MMM YY"),
-    psf: report.psf,
-  }));
 
   if (!activeTask) return null;
 
@@ -53,41 +39,7 @@ export default function MainContent() {
             <ActivityTable reports={data} />
           </div>
           <div className="p-10">
-            <Card>
-              <CardHeader className="text-sm text-gray-400">
-                Suggested
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer
-                  width={"100%"}
-                  height={300}
-                  min-width={300}
-                >
-                  <LineChart
-                    width={500}
-                    height={300}
-                    data={chartData}
-                    margin={{
-                      top: 10,
-                      right: -20,
-                      left: -40,
-                      bottom: 30,
-                    }}
-                  >
-                    <Line
-                      type="monotone"
-                      dataKey="psf"
-                      stroke="#999"
-                      strokeWidth="2"
-                    />
-                    <CartesianGrid stroke="#eee" strokeDasharray="3" />
-                    <Tooltip />
-                    <XAxis dataKey="date" />
-                    <YAxis dataKey="psf" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
+            <SuggestedGraph reports={data} />
           </div>
         </>
       )}

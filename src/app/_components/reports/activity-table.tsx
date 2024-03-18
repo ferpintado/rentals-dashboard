@@ -6,14 +6,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { PriceReportAparment } from "@/lib/types";
+import { PriceReportApartment } from "@/lib/types";
 import { numberToCurrency } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Decimal } from "@prisma/client/runtime/library";
 
 type ActivityTableProps = {
-  reports: PriceReportAparment[] | null;
+  reports: PriceReportApartment[] | null;
 };
 
 export default function ActivityTable({ reports }: ActivityTableProps) {

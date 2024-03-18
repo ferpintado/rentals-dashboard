@@ -4,6 +4,6 @@ export type TaskBuilding = Task & {
   building: Building;
 };
 
-export type PriceReportAparment = PriceReport & {
+export type PriceReportApartment = PriceReport & {
   apartment: Apartment;
 };
