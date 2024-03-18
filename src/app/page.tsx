@@ -2,7 +2,7 @@
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import TaskManager from "./_components/task-manager/task-manager";
+import TaskManager from "./_components/task-manager";
 import MainContent from "./_components/main-content";
 import Gpt from "./_components/gpt";
 import { AppProvider } from "@/context/app-context";

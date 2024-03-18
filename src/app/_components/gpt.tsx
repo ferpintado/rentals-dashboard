@@ -1,13 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-
 import {
   Command,
   CommandGroup,
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
@@ -16,6 +14,7 @@ import {
 import { AppContext } from "@/context/app-context";
 import { ChevronDownIcon } from "lucide-react";
 import { useContext } from "react";
+import GptForm from "./gpt/gpt-form";
 
 export default function Gpt() {
   const { activeTask } = useContext(AppContext);
@@ -59,35 +58,7 @@ export default function Gpt() {
           </PopoverContent>
         </Popover>
       </div>
-      <div className="flex flex-col p-4 h-full space-y-4 justify-between">
-        <div className="border-b-2 border-grey-400 mb-4">
-          <div>
-            <p className="uppercase text-sm font-medium text-gray-500">
-              Question
-            </p>
-            <p className="my-6 text-2xl text-gray-700">
-              What is the suggested rent for Unit 2301?
-            </p>
-          </div>
-          <div>
-            <p className="uppercase text-sm font-medium text-gray-500">
-              Answer
-            </p>
-            <p className="py-6 text-base">
-              Based upon the comparable market, the suggested rent for Unit
-              #2301 is $2325.00
-            </p>
-          </div>
-        </div>
-        <div>graph</div>
-        <div>
-          <Input />
-          <p className="text-xs py-2 text-center text-gray-400">
-            ChatGPT may produce inaccurate information about people, places, or
-            facts. ChatGPT July 20 Version
-          </p>
-        </div>
-      </div>
+      <GptForm />
     </div>
   );
 }

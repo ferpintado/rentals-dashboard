@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import TaskCard from "./task-card";
+import TaskCard from "./task-manager/task-card";
 import { groupTasksByType } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Task } from "@prisma/client";
