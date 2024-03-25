@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "migrate": "prisma migrate dev",
+    "reset-db": "prisma db push --force-reset",
     "seed": "tsx seed.ts",
-    "postinstall": "npm run migrate && npm run seed"
+    "postinstall": "npm run migrate && npm run reset-db && npm run seed"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0",
